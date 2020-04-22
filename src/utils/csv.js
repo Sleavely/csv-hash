@@ -3,8 +3,9 @@ const parse = require('csv-parse/lib/sync')
 const stringify = require('csv-stringify/lib/sync')
 
 exports.read = async (path) => {
-  const csvString = await fs.readFileAsync(path)
+  const csvString = await fs.readFileAsync(path, 'utf8')
   const records = parse(csvString, {
+    bom: true,
     columns: true,
     skip_empty_lines: true,
   })

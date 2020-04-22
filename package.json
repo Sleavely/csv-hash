@@ -1,0 +1,34 @@
+{
+  "name": "csv-hash",
+  "version": "0.0.1",
+  "description": "CLI utility to append a column with a hashed value from a CSV file",
+  "main": "./src/index.js",
+  "bin": {
+    "csv-hash": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "eslint ."
+  },
+  "author": "Joakim Hedlund <contact@joakimhedlund.com>",
+  "repository": "github:Sleavely/csv-hash",
+  "homepage": "https://github.com/Sleavely/csv-hash",
+  "license": "MIT",
+  "keywords": [
+    "cli",
+    "csv",
+    "hashing"
+  ],
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  },
+  "dependencies": {
+    "csv-parse": "^4.8.9",
+    "csv-stringify": "^5.4.3",
+    "meow": "^6.1.0"
+  }
+}

@@ -18,6 +18,7 @@ Options
   --from       Name of the column to hash from [email]
   --to         Name of the column to append [hashedEmail]
   --algorithm  Algorithm to use for hashing [sha512]
+  --salt       Optional salt to prefix values with
 
 For more information, see:
 ${self.homepage}
@@ -35,6 +36,10 @@ ${self.homepage}
     algorithm: {
       type: 'string',
       default: 'sha512',
+    },
+    salt: {
+      type: 'string',
+      default: '',
     },
   },
 })
@@ -58,6 +63,7 @@ const fail = (err) => {
       fromColumn: cli.flags.from,
       toColumn: cli.flags.to,
       algorithm: cli.flags.algorithm,
+      salt: cli.flags.salt,
     })
 
     console.log('Done.')

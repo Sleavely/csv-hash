@@ -28,6 +28,7 @@ $ csv-hash --help
     --from       Name of the column to hash from [email]
     --to         Name of the column to append [hashedEmail]
     --algorithm  Algorithm to use for hashing [sha512]
+    --salt       Optional salt to prefix values with
 
   For more information, see:
   https://github.com/Sleavely/csv-hash

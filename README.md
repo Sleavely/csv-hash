@@ -25,10 +25,12 @@ $ csv-hash --help
 
   Options
     --help
-    --from       Name of the column to hash from [email]
-    --to         Name of the column to append [hashedEmail]
-    --algorithm  Algorithm to use for hashing [sha512]
-    --salt       Optional salt to prefix values with
+    --from         Name of the column to hash from [email]
+    --to           Name of the column to append [hashedEmail]
+    --algorithm    Algorithm to use for hashing [sha512]
+    --prefix       Optional salt to prefix values with
+    --suffix       Optional salt to suffix values with
+    --hmac         HMAC key to generate a HMAC instead of hash
 
   For more information, see:
   https://github.com/Sleavely/csv-hash

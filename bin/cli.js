@@ -37,6 +37,19 @@ ${self.homepage}
       type: 'string',
       default: 'sha512',
     },
+    prefix: {
+      type: 'string',
+      default: '',
+    },
+    suffix: {
+      type: 'string',
+      default: '',
+    },
+    hmac: {
+      type: 'string',
+      default: '',
+    },
+    // TODO: deprecated, remove in 2.x
     salt: {
       type: 'string',
       default: '',
@@ -53,6 +66,10 @@ const fail = (err) => {
 }
 
 (async () => {
+  if (cli.flags.salt) {
+    console.warn('--salt is deprecated. Use --prefix instead.')
+    cli.flags.prefix = cli.flags.salt
+  }
   if (input) {
     const inputPath = path.resolve(process.cwd(), input)
     const outputPath = path.resolve(process.cwd(), output)
@@ -63,7 +80,9 @@ const fail = (err) => {
       fromColumn: cli.flags.from,
       toColumn: cli.flags.to,
       algorithm: cli.flags.algorithm,
-      salt: cli.flags.salt,
+      prefix: cli.flags.prefix,
+      suffix: cli.flags.suffix,
+      hmac: cli.flags.hmac,
     })
 
     console.log('Done.')

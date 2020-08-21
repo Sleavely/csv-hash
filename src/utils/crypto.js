@@ -6,3 +6,7 @@ const crypto = require('crypto')
 exports.hash = (input, algorithm = 'sha512') => {
   return crypto.createHash(algorithm).update(input).digest('hex')
 }
+
+exports.hmac = (input, algorithm = 'sha512', key = '') => {
+  return crypto.createHmac(algorithm, key).update(input).digest('hex')
+}
